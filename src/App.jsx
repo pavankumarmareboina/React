@@ -4,14 +4,10 @@ import { BrowserRouter ,Routes, Route, Link } from "react-router-dom";
 import Home from "./components/home";
 
 
-
 function App() {
   return (
    <>
-   <Home name ="alias"/>
-   <Home />
-   <Home />
-   <Home />
+   <Home/>
    </>
   );
 }
