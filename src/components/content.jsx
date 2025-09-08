@@ -1,28 +1,69 @@
-import React from 'react';
-import { data } from 'react-router-dom';
+import React from "react";
+import { useState , useEffect } from "react";
 
 const Content = () => {
+   const [message, setMessage] = useState('waiting...');
+  const show = [
+    {
+      id: 1,
+      name: "AIO",
+      rating: 5,
+      price: 599,
+      img: "https://media.istockphoto.com/id/1458215547/photo/brown-bear.jpg?s=612x612&w=0&k=20&c=MRQhtNC_-P0llLRwwA3wmbQL6iroSjUla1PmvvEWCZU=",
+    },
+    {
+      id: 2,
+      name: "AIO",
+      rating: 5,
+      price: 599,
+      img: "https://media.istockphoto.com/id/1458215547/photo/brown-bear.jpg?s=612x612&w=0&k=20&c=MRQhtNC_-P0llLRwwA3wmbQL6iroSjUla1PmvvEWCZU=",
+    },
+    {
+      id: 3,
+      name: "AIO",
+      rating: 5,
+      price: 599,
+      img: "https://media.istockphoto.com/id/1458215547/photo/brown-bear.jpg?s=612x612&w=0&k=20&c=MRQhtNC_-P0llLRwwA3wmbQL6iroSjUla1PmvvEWCZU=",
+    },
+    {
+      id: 4,
+      name: "AIO",
+      rating: 5,
+      price: 599,
+      img: "https://media.istockphoto.com/id/1458215547/photo/brown-bear.jpg?s=612x612&w=0&k=20&c=MRQhtNC_-P0llLRwwA3wmbQL6iroSjUla1PmvvEWCZU=",
+    },
+  ];
+  let listShow = show.map(item=>(
+    <div key={item.id} className="w-[30%] border-1 border-gray-500 rounded-[5px] tracking-[1px]">
+        <img src={item.img} alt={item.img} />
+        <p>{item.name}</p>
+        <p>{item.rating}</p>
+        <p>{item.price}</p>
+      </div>
+  ))
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setMessage(
+        listShow = show.map(item=>(
+    <div key={item.id} className="w-[30%] border-1 border-gray-500 rounded-[5px] tracking-[1px]">
+        <img src={item.img} alt={item.img} />
+        <p>{item.name}</p>
+        <p>{item.rating}</p>
+        <p>{item.price}</p>
+      </div>
+  ))
+      );
+    }, 1000);
 
+    // Cleanup the timeout if the component unmounts
+    return () => clearTimeout(timer);
+  }, []);
   return (
-    <div className="flex flex-wrap gap-4">
-      {
-      list.map((box) => (
-        <div
-          key={box.id}
-          className="border w-[30%] text-center cursor-pointer rounded-[8px] p-4"
-        >
-          <img src={box.image} alt={box.title} className="mx-auto mb-2" />
-          <h2 className="text-[22px] tracking-[2px]">{box.title}</h2>
-          <p className="text-[12px] tracking-[2px] text-gray-500">
-            {box.description}
-          </p>
-          <button className="w-[50px] h-[30px] bg-fuchsia-300 rounded-[4px] text-white border border-gray-400 cursor-pointer hover:bg-white hover:text-black">
-            More
-          </button>
-        </div>
-      ))}
-    </div>
+    <>
+    <div className="flex text-center">{listShow}</div>
+    <h1 className="flex text-center">{message}</h1>
+    </>
   );
 };
 
-export default Content;
+export default Content; 

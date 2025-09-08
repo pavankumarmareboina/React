@@ -1,5 +1,5 @@
-import Content from "./content";
 import React from "react";
+import Content from "./content";
 
 const Navbar = () => {
   return (
