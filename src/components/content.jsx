@@ -1,8 +1,8 @@
 import React from "react";
-import { useState , useEffect } from "react";
+import { useState, useEffect } from "react";
 
 const Content = () => {
-   const [message, setMessage] = useState('waiting...');
+  const [message, setMessage] = useState("waiting...");
   const show = [
     {
       id: 1,
@@ -33,25 +33,31 @@ const Content = () => {
       img: "https://media.istockphoto.com/id/1458215547/photo/brown-bear.jpg?s=612x612&w=0&k=20&c=MRQhtNC_-P0llLRwwA3wmbQL6iroSjUla1PmvvEWCZU=",
     },
   ];
-  let listShow = show.map(item=>(
-    <div key={item.id} className="w-[30%] border-1 border-gray-500 rounded-[5px] tracking-[1px]">
-        <img src={item.img} alt={item.img} />
-        <p>{item.name}</p>
-        <p>{item.rating}</p>
-        <p>{item.price}</p>
-      </div>
-  ))
+  let listShow = show.map((item) => (
+    <div
+      key={item.id}
+      className="w-[30%] border-1 border-gray-500 rounded-[5px] tracking-[1px]"
+    >
+      <img src={item.img} alt={item.img} />
+      <p>{item.name}</p>
+      <p>{item.rating}</p>
+      <p>{item.price}</p>
+    </div>
+  ));
   useEffect(() => {
     const timer = setTimeout(() => {
       setMessage(
-        listShow = show.map(item=>(
-    <div key={item.id} className="w-[30%] border-1 border-gray-500 rounded-[5px] tracking-[1px]">
-        <img src={item.img} alt={item.img} />
-        <p>{item.name}</p>
-        <p>{item.rating}</p>
-        <p>{item.price}</p>
-      </div>
-  ))
+        (listShow = show.map((item) => (
+          <div
+            key={item.id}
+            className="w-[30%] border-1 border-gray-500 rounded-[5px] tracking-[1px]"
+          >
+            <img src={item.img} alt={item.img} />
+            <p>{item.name}</p>
+            <p>{item.rating}</p>
+            <p>{item.price}</p>
+          </div>
+        )))
       );
     }, 1000);
 
@@ -60,10 +66,9 @@ const Content = () => {
   }, []);
   return (
     <>
-    <div className="flex text-center">{listShow}</div>
-    <h1 className="flex text-center">{message}</h1>
+      <div className="flex text-center">{listShow}</div>
     </>
   );
 };
 
-export default Content; 
+export default Content;
