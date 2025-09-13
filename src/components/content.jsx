@@ -9,28 +9,28 @@ const Content = () => {
       name: "AIO",
       rating: 5,
       price: 599,
-      img: "https://media.istockphoto.com/id/1458215547/photo/brown-bear.jpg?s=612x612&w=0&k=20&c=MRQhtNC_-P0llLRwwA3wmbQL6iroSjUla1PmvvEWCZU=",
+      img: "./src/assets/image.png",
     },
     {
       id: 2,
       name: "AIO",
       rating: 5,
       price: 599,
-      img: "https://media.istockphoto.com/id/1458215547/photo/brown-bear.jpg?s=612x612&w=0&k=20&c=MRQhtNC_-P0llLRwwA3wmbQL6iroSjUla1PmvvEWCZU=",
+      img: "./src/assets/image.png",
     },
     {
       id: 3,
       name: "AIO",
       rating: 5,
       price: 599,
-      img: "https://media.istockphoto.com/id/1458215547/photo/brown-bear.jpg?s=612x612&w=0&k=20&c=MRQhtNC_-P0llLRwwA3wmbQL6iroSjUla1PmvvEWCZU=",
+      img: "./src/assets/image.png",
     },
     {
       id: 4,
       name: "AIO",
       rating: 5,
       price: 599,
-      img: "https://media.istockphoto.com/id/1458215547/photo/brown-bear.jpg?s=612x612&w=0&k=20&c=MRQhtNC_-P0llLRwwA3wmbQL6iroSjUla1PmvvEWCZU=",
+      img: "./src/assets/image.png",
     },
   ];
   let listShow = show.map((item) => (
@@ -67,6 +67,7 @@ const Content = () => {
   return (
     <>
       <div className="flex text-center">{listShow}</div>
+      <div className="flex">{message}</div>
     </>
   );
 };
