@@ -2,6 +2,9 @@ import React from "react";
 import { useState, useEffect } from "react";
 
 const Content = () => {
+ const comeIN = ()=>{
+  alert('djkfg')
+ }
   const [message, setMessage] = useState("waiting...");
   const show = [
     {
@@ -66,7 +69,7 @@ const Content = () => {
   }, []);
   return (
     <>
-      <div className="flex text-center">{listShow}</div>
+      <div onDoubleClick={comeIN} className="flex text-center">{listShow}</div>
       <div className="flex">{message}</div>
     </>
   );
