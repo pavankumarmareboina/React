@@ -13,7 +13,7 @@ const Navbar = () => {
         <li><Link to='/more'>more</Link></li>
       </ul>
     </nav>
-    {/* <Content/> */}
+    <Content/>
     <h1>Home page</h1>
     </>
   );

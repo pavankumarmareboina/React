@@ -69,7 +69,7 @@ const Content = () => {
   }, []);
   return (
     <>
-      <div onDoubleClick={comeIN} className="flex text-center">{listShow}</div>
+      <div onDoubleClick={comeIN} className="flex text-center mt-2">{listShow}</div>
       <div className="flex">{message}</div>
     </>
   );
