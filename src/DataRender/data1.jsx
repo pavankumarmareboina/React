@@ -1,0 +1,48 @@
+import React from "react";
+import { useState, useEffect } from "react";
+import App from "../App";
+const Json = () => {
+  const [data, setData] = useState([]);
+  const [data1, setData1] = useState([]);
+
+   const API = "/data.json";
+    const datacome = async () => {
+      try {
+        const respose = await fetch(API);
+        const comeData = await respose.json();
+        setData(comeData.content1);
+        setData1(comeData.con2);
+      } catch (error) {
+        console.error("Server Down...!!", error);
+      }
+    };
+  useEffect(() => {
+    datacome();
+  }, []);
+
+  return (
+    <>
+    <div>
+      {data.map((items) => (
+        <div key={items.id}>
+          <p>{items.age}</p>
+          <p>{items.number}</p>
+          <img src={items.proof} alt='' />
+          <p>{items.details}</p>
+        </div>
+      ))}
+    </div>
+    <div>
+      {data1.map((items) => (
+        <div key={items.p}>
+          <p>{items.age}</p>
+          <p>{items.number}</p>
+          <img src={items.proof}  />
+          <p>{items.details}</p>
+        </div>
+      ))}
+    </div>
+    </>
+  );
+};
+export default Json;
