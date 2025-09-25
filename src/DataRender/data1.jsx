@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 import App from "../App";
 const Json = () => {
   const [data, setData] = useState([]);
-  const [data1, setData1] = useState([]);
 
    const API = "/data.json";
     const datacome = async () => {
@@ -33,14 +32,7 @@ const Json = () => {
       ))}
     </div>
     <div>
-      {data1.map((items) => (
-        <div key={items.p}>
-          <p>{items.age}</p>
-          <p>{items.number}</p>
-          <img src={items.proof}  />
-          <p>{items.details}</p>
-        </div>
-      ))}
+      <center>fetch 1 </center>
     </div>
     </>
   );
