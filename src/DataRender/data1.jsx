@@ -10,13 +10,12 @@ const Json = () => {
         const respose = await fetch(API);
         const comeData = await respose.json();
         setData(comeData.content1);
-        setData1(comeData.con2);
       } catch (error) {
         console.error("Server Down...!!", error);
       }
     };
   useEffect(() => {
-    datacome();
+    datacome(API);
   }, []);
 
   return (

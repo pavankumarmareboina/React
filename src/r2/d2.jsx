@@ -7,7 +7,7 @@ const D2 = () => {
   const API = "/data.json";
   const f2 = async (API) => {
     try {
-      let fRes = await fetch();
+      let fRes = await fetch(API);
       let cRes = await fRes.json();
 
       setD1(cRes.con2);
@@ -17,17 +17,19 @@ const D2 = () => {
   };
 
   useEffect(() => {
-    f2();
+    f2(API);
   });
   return (
     <>
-      {d1.map((it) => (
+      <div className="flex justify-around">
+        {d1.map((it) => (
         <div key={it.i} className="text-center rounded-2xl">
           <p>{it.p}</p>
           <img className="w-[200px] h-[300px]" src={it.proof2} alt="" />
           <article>{it.details2}</article>
         </div>
       ))}
+      </div>
     </>
   );
 };
