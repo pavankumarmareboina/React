@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { BrowserRouter ,Routes, Route, Link, Router } from "react-router-dom";
 import Json from "./DataRender/data1";
 import D2 from "./r2/d2";
+import Navbar from "./components/navbar";
 // import { data } from "react-router-dom";
 // import Navbar from "./components/navbar";
 // import Cik from "./components/clickEvents";
@@ -11,9 +12,10 @@ import D2 from "./r2/d2";
 // import More from "./pages/more";
 
 
-function App() {
+const App = () => {
   return (
    <>
+   <Navbar />
    <Json />
    <D2 />
    {/* <BrowserRouter>
