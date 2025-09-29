@@ -1,8 +1,11 @@
 import React from "react";
+import D2 from "../r2/d2";
 
 const About = () =>{
-    <>
-    <h1>about page</h1>
-    </>
+   return(
+    <div>
+        <D2 />
+    </div>
+   )
 }
 export default About

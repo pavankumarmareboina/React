@@ -1,8 +1,11 @@
 import React from "react";
+import Json from "../DataRender/data1";
 
 const Contact = ()=>{
-    <>
-    <h1>Contact page</h1>
-    </>
+   return(
+    <div>
+        <Json />
+    </div>
+   )
 }
 export default Contact;
