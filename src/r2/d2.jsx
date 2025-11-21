@@ -21,7 +21,7 @@ const D2 = () => {
     <>
       <div className="grid grid-cols-5 text-center">
         {d1.map((it) => (
-        <div key={it.i} className="text-center border-1 p-16">
+        <div key={it.i} className="text-center p-16">
           <p>{it.p}</p>
           <img className="w-[200px] h-[300px] m-auto" src={it.proof2} alt="" />
           <article>{it.details2}</article>
